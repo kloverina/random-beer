@@ -1,0 +1,90 @@
+//normal laptop
+@media (min-width: 1200px) {
+  header{
+    padding: 5px 65px 0;
+  }
+}
+
+//bid screens
+@media (min-width: 1400px) {
+  header{
+    padding: 5px 80px 0;
+  }
+}
+
+//mini - laptops or big iPad
+@media (max-width: 1199px) {
+  header{
+    padding: 5px 50px 0;
+  }
+}
+
+//iPad
+@media (max-width: 868px) {
+  header{
+    padding: 5px 40px 0;
+  }
+}
+
+//iPhone &iPad-mini
+@media (max-width: 480px) {
+  header{
+    padding: 5px 20px 0;
+  }
+}
+
+
+
+
+header{
+  background: beige;
+  height: 100%;
+  .header_nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 100px;
+  }
+}
+
+.psevdo-logo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-width: 70px;
+  min-height: 70px;
+  height: 100%;
+
+  span{
+    position: absolute;
+
+    &:first-of-type{
+      top: -12px;
+      left: 0;
+    }
+
+    &:last-of-type{
+      top: 15px;
+      left: 34px;
+    }
+  }
+}
+
+.profile-pic{
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  background: url("/src/assets/profile-pic-colored.png");
+  background-size: cover;
+
+
+
+
+}
