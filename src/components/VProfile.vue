@@ -1,8 +1,11 @@
 <template>
   <section class='v-profile profile'>
     <div class='profile__line'>
-      <div class='profile-pic_block'>
+      <div class='profile__col profile-pic_block'>
         <img :src='user.avatar' height='100px' width='100px'>
+      </div>
+      <div class='profile__col'>
+
       </div>
       </div>
     <div class='profile__line'>
@@ -51,5 +54,5 @@ export default {
 </script>
 
 <style lang='scss' scoped>
- @import "src/styles/profile";
+ @import "../styles/profile";
 </style>
