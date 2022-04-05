@@ -1,22 +1,19 @@
 <template>
   <div id="app">
-    <header>
-      <nav class='header_nav'>
-        <router-link class="nav-link" to="/">
-          <div class='psevdo-logo'>
-            <span class='katy-berry'>Random</span>
-            <span class='katy-berry'>beer!</span>
-          </div>
-        </router-link>
-        <router-link class="nav-link" to="/profile">
-          <button class='profile-pic'> 
+    <VHeader
+      @update-current-tab='updateCurrentTab'
 
-          </button>
-        </router-link>
-      </nav>
-    </header>
+    ></VHeader>
     <main class="content">
-      <router-view />
+      <!-- there is a perfect place for vue-router, but i have no idea how to deploy spa app :( -->
+      <!-- so for now lets pretend that it IS a spa app. thx! -->
+      <VRandomizer v-if='currentTab === 0'>
+
+      </VRandomizer>
+
+      <VProfile v-if='currentTab === 1'>
+
+      </VProfile>
     </main>
     <footer>
       <span>
@@ -30,3 +27,21 @@
 <style lang='scss'>
   @import "styles/index";
 </style>
+<script>
+import VHeader from '@/components/VHeader'
+import VRandomizer from '@/components/VRandomizer'
+import VProfile from '@/components/VProfile'
+export default {
+  components: { VProfile, VRandomizer, VHeader },
+  data() {
+    return {
+      currentTab: 0
+    }
+  },
+  methods:{
+    updateCurrentTab(tab) {
+      this.currentTab = tab
+    }
+  }
+}
+</script>

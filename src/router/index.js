@@ -7,12 +7,12 @@ const routes = [
   {
     path: '/',
     name: 'Randomizer',
-    component: () => import('@/views/VRandomizer.vue')
+    component: () => import('@/components/VRandomizer.vue')
   },
   {
     path: '/profile',
     name: 'Profile',
-    component: () => import('@/views/VProfile.vue')
+    component: () => import('@/components/VProfile.vue')
   }
 ]
 

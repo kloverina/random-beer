@@ -58,9 +58,12 @@ header{
   min-width: 70px;
   min-height: 70px;
   height: 100%;
+  background: none;
+  border: none;
 
   span{
     position: absolute;
+    cursor: pointer;
 
     &:first-of-type{
       top: -12px;
@@ -83,8 +86,6 @@ header{
   border: none;
   background: url("/src/assets/profile-pic-colored.png");
   background-size: cover;
-
-
 
 
 }
