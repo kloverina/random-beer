@@ -39,14 +39,9 @@ a:not([class]) {
 
 
 img {
-  //max-width: 100%;
   display: block;
 }
 
-
-article > * + * {
-  margin-top: 1em;
-}
 
 input,
 button,

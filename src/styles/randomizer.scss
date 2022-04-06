@@ -1,0 +1,57 @@
+.about{
+  h4{
+    margin-bottom: 0;
+    margin-left: 15px;
+    text-align: left;
+  }
+  &_button{
+    margin-top: 15px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    padding: 0;
+    &__colored{
+      padding: 5px 15px;
+      border-radius: 8px;
+      background: #F5F5DC;
+      h4{
+        margin-left: 0;
+      }
+    }
+  }
+  &_info{
+    border: 1px solid #7a6350;
+    background: #F5F5DC;
+    padding: 20px 10px;
+    color: black;
+    border-radius: 5px;
+    p{
+      margin-left: 5px;
+    }
+  }
+}
+
+.beer-block{
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+
+  &__item{
+    margin: 10px 0;
+    min-height: 50px;
+    min-width: 30px;
+  }
+  .beer-pic{
+    border: 2px solid black;
+    flex: 3 1 40%;
+    min-width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+
+
+
+  }
+}

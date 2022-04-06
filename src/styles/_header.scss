@@ -60,6 +60,13 @@ header{
   height: 100%;
   background: none;
   border: none;
+  &:active, &:focus{
+    background: none;
+    outline: none;
+  }
+  &::-moz-focus-inner {
+    border: 0;
+  }
 
   span{
     position: absolute;
@@ -73,6 +80,10 @@ header{
     &:last-of-type{
       top: 17px;
       left: 34px;
+    }
+
+    &:active, &:focus{
+      background: none;
     }
   }
 }

@@ -8,37 +8,35 @@
 @media (min-width: 1200px) {
   .content{
     //background: #db0eea;
-    max-width: 1000px;
+    max-width: 990px;
   }
 }
 
 //bid screens
 @media (min-width: 1400px) {
   .content{
-    //background: #a5d7ce;
-    max-width: 1280px;
+    max-width: 1200px;
   }
 }
 
 //mini - laptops or big iPad
 @media (max-width: 1199px) {
   .content{
-    //background: darkgoldenrod;
-    max-width: 860px;
+    max-width: 800px;
   }
 }
 
 //iPad
-@media (max-width: 868px) {
+@media (max-width: 880px) {
   .content{
-    max-width: 700px;
+    max-width: 650px;
   }
 }
 
 //iPhone &iPad-mini
-@media (max-width: 480px) {
+@media (max-width: 530px) {
   .content{
-    max-width: 350px;
+    max-width: 340px;
   }
 }
 
@@ -59,11 +57,13 @@
   text-decoration: none;
 }
 
-
-.content{
-  font-family: "Segoe UI", sans-serif;
+body{
+  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   color: black;
+}
+
+.content{
   min-height: calc(100vh - 150px - 30px);
   margin: 0 auto;
   padding: 10px 0 0;

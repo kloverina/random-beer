@@ -25,12 +25,12 @@
         <h3> General: </h3>
         <div class='profile-info'>
           <p class='profile-info__item'>
-            <span>Email: </span>
-            <span>{{user.email}}</span>
+            <span>Location: </span>
+            <span>{{ address }}</span>
           </p>
           <p class='profile-info__item'>
-            <span>Phone: </span>
-            <span>{{user.phone_number}}</span>
+            <span>Gender: </span>
+            <span>{{user.gender}}</span>
           </p>
 
         </div>
@@ -54,7 +54,9 @@
 
     <div class='button-section'>
       <span> {{ message}} </span>
-      <button @click='updateUser' :class="{ not_active: isButtonBlocked}"> It is not me! </button>
+      <button @click='updateUser' :class="{ not_active: isButtonBlocked}">
+        It is not me!
+      </button>
     </div>
   </section>
 
@@ -94,7 +96,10 @@ export default {
         return this.MessageBox[this.counter - 1]
       }
       return ""
-
+    },
+    address: function() {
+      let temp = this.user.address
+      return temp.city + ', '+temp.state +', ' + temp.country
     }
   },
   methods:{
