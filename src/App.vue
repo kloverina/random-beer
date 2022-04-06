@@ -23,10 +23,6 @@
   </div>
 </template>
 
-
-<style lang='scss'>
-  @import "styles/index";
-</style>
 <script>
 import VHeader from '@/components/VHeader'
 import VRandomizer from '@/components/VRandomizer'
@@ -94,3 +90,7 @@ export default {
   }
 }
 </script>
+
+<style lang='scss'>
+@import "styles/index";
+</style>
