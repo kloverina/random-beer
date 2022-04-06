@@ -1,4 +1,9 @@
 # random-beer
+Adaptive vue.js app that genegates you a random beer!
+Why? Because why not xd
+
+### View project
+You can view deployed app here: https://random-beer.onrender.com
 
 ## Project setup
 ```
@@ -15,10 +20,4 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
