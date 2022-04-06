@@ -59,19 +59,35 @@
   text-decoration: none;
 }
 
+
 .content{
-  min-height: calc(100vh - 150px);
+  font-family: "Segoe UI", sans-serif;
+  font-size: 18px;
+  color: black;
+  min-height: calc(100vh - 150px - 30px);
   margin: 0 auto;
   padding: 10px 0 0;
+  height: 100%;
 }
 
 footer{
   display: flex;
-  flex-direction: row-reverse;
+  width: 100%;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   margin: 0 auto;
-  padding: 5px 100px;
+  padding: 5px 65px;
+  background: black;
+  color: white;
+  min-height: 60px;
+  span{
+    padding: 20px 0;
+  }
+
+  a{
+    color: inherit;
+  }
 }
 
 

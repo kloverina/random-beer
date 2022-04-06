@@ -11,13 +11,13 @@
 
       </VRandomizer>
 
-      <VProfile v-if='currentTab === 1'>
-
-      </VProfile>
+      <VProfile v-if='currentTab === 1'
+                :user='user'
+      ></VProfile>
     </main>
     <footer>
       <span>
-        <a href='https://github.com/kloverina'>kloverina </a>, 2022
+        <a href='https://github.com/kloverina'>@ kloverina </a>, 2022
       </span>
     </footer>
   </div>
@@ -31,16 +31,65 @@
 import VHeader from '@/components/VHeader'
 import VRandomizer from '@/components/VRandomizer'
 import VProfile from '@/components/VProfile'
+import axios from 'axios'
 export default {
   components: { VProfile, VRandomizer, VHeader },
   data() {
     return {
-      currentTab: 0
+      currentTab: 0,
+      beer: {},
+      user: {}
     }
+  },
+  mounted() {
+    this.getUserData()
+    this.getBeerData()
   },
   methods:{
     updateCurrentTab(tab) {
       this.currentTab = tab
+    },
+
+    async getBeerData(){
+      let that = this
+
+      axios({
+        method: 'get',
+        url: 'https://random-data-api.com/api/beer/random_beer',
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8'
+        }
+      })
+        .then(function (response) {
+          console.log(`GET: /api/get_beer/ | SUCCESS`)
+          console.log(response.data)
+          that.beer = response.data
+        })
+        .catch(function (error) {
+          console.log(`GET: /api/get_beer/ | ERROR`)
+          console.log(error)
+        })
+    },
+
+    async getUserData(){
+      let that = this
+
+      axios({
+        method: 'get',
+        url: 'https://random-data-api.com/api/users/random_user',
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8'
+        }
+      })
+        .then(function (response) {
+          console.log(`GET: /api/get_user_data/ | SUCCESS`)
+          console.log(response.data)
+          that.user = response.data
+        })
+        .catch(function (error) {
+          console.log(`GET: /api/get_user_data/ | ERROR`)
+          console.log(error)
+        })
     }
   }
 }

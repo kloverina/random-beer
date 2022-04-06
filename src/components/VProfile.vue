@@ -1,54 +1,73 @@
 <template>
   <section class='v-profile profile'>
-    <div class='profile__line'>
-      <div class='profile__col profile-pic_block'>
-        <img :src='user.avatar' height='100px' width='100px'>
+    <div class='profile_line'>
+      <div class='profile__item profile__item__1fr profile-photo'>
+          <img :src='user.avatar'  alt='avatar'>
       </div>
-      <div class='profile__col'>
+      <div class='profile__item profile__item__3fr'>
+        <div class='profile-info'>
+          <p class='profile-info__item item item__name'>
+            {{user.first_name}} {{user.last_name}}
+          </p>
+
+          <p class='profile-info__item item'>
+            {{this.currentAge}} years old
+          </p>
+        </div>
 
       </div>
       </div>
-    <div class='profile__line'>
+    <div class='profile_additional-info'>
+      <h5 class='profile-header'> Additional info: </h5>
+      <div class='profile_line'>
+        <div class='profile-info'>
 
+          <p class='profile-info__item'>
+            <span>Email: </span>
+            <span>{{user.email}}</span>
+          </p>
+          <p class='profile-info__item'>
+            <span>Phone: </span>
+            <span>{{user.phone_number}}</span>
+          </p>
+          <p class='profile-info__item'>
+            <span> Position: </span>
+            <span>{{user.employment.title}}</span>
+          </p>
+        </div>
+
+
+      </div>
+    </div>
+    <div class='button-section'>
+      <button> It is not me! </button>
     </div>
   </section>
 
 </template>
 
 <script>
-import axios from 'axios'
 
 export default {
   name: 'VProfile',
-  data() {
-    return {
-      user: {}
+  props: {
+    user:{
+      type: Object,
+      required: true
     }
   },
-  mounted() {
-    this.getUserData()
+  data() {
+    return{}
+  },
+  computed:{
+    currentAge: function() {
+      let birthYear = new Date(this.user.date_of_birth).getFullYear()
+      let curentYear = new Date().getFullYear()
+      return curentYear - birthYear
+    }
   },
   methods:{
-    async getUserData(){
-      let that = this
 
-      axios({
-        method: 'get',
-        url: 'https://random-data-api.com/api/users/random_user',
-        headers: {
-          'Content-type': 'application/json; charset=UTF-8'
-        }
-      })
-        .then(function (response) {
-          console.log(`GET: /api/get_user_data/ | SUCCESS`)
-          console.log(response.data)
-          that.user = response.data
-        })
-        .catch(function (error) {
-          console.log(`GET: /api/get_user_data/ | ERROR`)
-          console.log(error)
-        })
-    }
   }
 }
 </script>

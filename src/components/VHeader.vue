@@ -24,7 +24,6 @@ export default {
   methods:{
     updateCurrentTab(tab){
       this.currentTab = tab
-      console.log(this.currentTab)
       this.$emit('update-current-tab', this.currentTab)
     }
   }
