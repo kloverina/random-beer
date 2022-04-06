@@ -7,21 +7,23 @@
       <div class='profile__item profile__item__3fr'>
         <div class='profile-info'>
           <p class='profile-info__item item item__name'>
-            {{user.first_name}} {{user.last_name}}
+            <span class='name'>{{user.first_name}} {{user.last_name}}</span>
+            <span class='username'> @{{user.username}}</span>
           </p>
 
           <p class='profile-info__item item'>
             {{this.currentAge}} years old
           </p>
+          <p class='profile-info__item item'>
+            <span>{{user.employment.title}}</span>
+          </p>
         </div>
 
       </div>
-      </div>
-    <div class='profile_additional-info'>
-      <h5 class='profile-header'> Additional info: </h5>
-      <div class='profile_line'>
-        <div class='profile-info'>
 
+      <div class='profile_additional-info profile__item'>
+        <h3> General: </h3>
+        <div class='profile-info'>
           <p class='profile-info__item'>
             <span>Email: </span>
             <span>{{user.email}}</span>
@@ -30,17 +32,29 @@
             <span>Phone: </span>
             <span>{{user.phone_number}}</span>
           </p>
-          <p class='profile-info__item'>
-            <span> Position: </span>
-            <span>{{user.employment.title}}</span>
-          </p>
+
         </div>
-
-
       </div>
-    </div>
+
+      <div class='profile_additional-info profile__item'>
+        <h3 class='profile-header'> Additional info: </h3>
+        <div class='profile-info'>
+          <p class='profile-info__item'>
+            <span>Email: </span>
+            <span>{{user.email}}</span>
+          </p>
+          <p class='profile-info__item'>
+            <span>Phone: </span>
+            <span>{{user.phone_number}}</span>
+          </p>
+
+        </div>
+      </div>
+      </div>
+
     <div class='button-section'>
-      <button> It is not me! </button>
+      <span> {{ message}} </span>
+      <button @click='updateUser' :class="{ not_active: isButtonBlocked}"> It is not me! </button>
     </div>
   </section>
 
@@ -57,16 +71,41 @@ export default {
     }
   },
   data() {
-    return{}
+    return{
+      showMessage: false,
+      counter: 0,
+      MessageBox: [
+        "Better now?",
+        "Satisfied already?",
+        'Really?..',
+        'This button will rest a bit. You should too.'
+      ],
+      isButtonBlocked: false
+    }
   },
   computed:{
     currentAge: function() {
       let birthYear = new Date(this.user.date_of_birth).getFullYear()
       let curentYear = new Date().getFullYear()
       return curentYear - birthYear
+    },
+    message: function() {
+      if (this.counter > 0){
+        return this.MessageBox[this.counter - 1]
+      }
+      return ""
+
     }
   },
   methods:{
+    updateUser(){
+      if (this.isButtonBlocked) return
+      this.counter++
+      if (this.counter === this.MessageBox.length)
+        this.isButtonBlocked = true
+      this.showMessage = true
+      this.$emit('update-user-profile')
+    }
 
   }
 }

@@ -13,11 +13,12 @@
 
       <VProfile v-if='currentTab === 1'
                 :user='user'
+                @update-user-profile='getUserData'
       ></VProfile>
     </main>
     <footer>
       <span>
-        <a href='https://github.com/kloverina'>@ kloverina </a>, 2022
+        <a href='https://github.com/kloverina'>© kloverina </a>, 2022
       </span>
     </footer>
   </div>
