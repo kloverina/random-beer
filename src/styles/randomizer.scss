@@ -1,16 +1,26 @@
+$main-bc: #F5F5DC;
+
+p{
+  text-align: justify;
+}
+
 .about{
+  margin: 20px 0;
+  width: 100%;
   h4{
     margin-bottom: 0;
     margin-left: 15px;
     text-align: left;
   }
   &_button{
+
     margin-top: 15px;
     border: none;
     cursor: pointer;
     background: none;
     padding: 0;
     &__colored{
+      width: 100%;
       padding: 5px 15px;
       border-radius: 8px;
       background: #F5F5DC;
@@ -19,6 +29,7 @@
       }
     }
   }
+
   &_info{
     border: 1px solid #7a6350;
     background: #F5F5DC;
@@ -26,6 +37,7 @@
     color: black;
     border-radius: 5px;
     p{
+      padding: 0 30px;
       margin-left: 5px;
     }
   }
@@ -42,16 +54,90 @@
     min-height: 50px;
     min-width: 30px;
   }
-  .beer-pic{
-    border: 2px solid black;
-    flex: 3 1 40%;
-    min-width: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
+}
+
+.beer-pic{
+  margin: 20px 0;
+  //border: 2px solid black;
+  flex: 3 1 40%;
+  min-width: 40%;
+  max-width: 70%;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  border-radius: 3px;
+}
+
+.beer-info, .beer-button{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.beer-info{
+  flex: 4 1 45%;
+  min-width: 60%;
+
+  &__general, .grid {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    border-radius: 5px;
+  }
+  &__general{
+    margin: 20px 0;
+  }
+  .grid-row{
+    background-color: black;
+    display: grid;
+    place-items: stretch;
+    grid-template-columns: 1fr 2fr;
+    gap: 1px;
+    grid-column: span 4;
+  }
+
+  .grid-col{
+    padding: 10px 20px 0;
+    background: $main-bc;
+    &-title{
+      min-width: 72px;
+    }
+    &-info{
+      //margin-left: 2px;
+    }
+
+    &:last-of-type{
+      padding-bottom: 10px;
+    }
+  }
+
+  &__additional{
+    border: none;
+
+    button{
+      width: 100%;
+      background: darken($main-bc, 5%);
+      border: none;
+      padding: 5px 10px;
+    }
+    .grid-col{
+      //background: lighten($main-bc, 3%);
+    }
+  }
+}
+
+.beer-button{
+  box-sizing: border-box;
+  padding: 1px 8px;
+}
 
 
 
+
+
+//iPhone &iPad
+@media (max-width: 880px) {
+  .beer-info{
+    max-width: none;
   }
 }

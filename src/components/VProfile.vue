@@ -54,7 +54,7 @@
 
     <div class='button-section'>
       <span> {{ message}} </span>
-      <button @click='updateUser' :class="{ not_active: isButtonBlocked}">
+      <button class='btn' @click='updateUser' :class="{ not_active: isButtonBlocked}">
         It is not me!
       </button>
     </div>

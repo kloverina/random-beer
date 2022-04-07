@@ -7,8 +7,9 @@
     <main class="content">
       <!-- there is a perfect place for vue-router, but i have no idea how to deploy spa app :( -->
       <!-- so for now lets pretend that it IS a spa app. thx! -->
-      <VRandomizer v-if='currentTab === 0'>
-
+      <VRandomizer v-if='currentTab === 0'
+                   :beer='beer'
+                   @get-new-beer='getBeerData'>
       </VRandomizer>
 
       <VProfile v-if='currentTab === 1'
@@ -30,6 +31,7 @@ import VRandomizer from '@/components/VRandomizer'
 import VProfile from '@/components/VProfile'
 import axios from 'axios'
 export default {
+  name: 'App',
   components: { VProfile, VRandomizer, VHeader },
   data() {
     return {
