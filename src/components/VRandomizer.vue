@@ -39,7 +39,7 @@
 
           </div>
           <div class='beer-info__additional'>
-            <button @click='showDetailedInfo = !showDetailedInfo'>
+            <button class='info-button' @click='showDetailedInfo = !showDetailedInfo'>
               Detailed info
             </button>
             <div class='grid' v-if='showDetailedInfo'>
@@ -72,7 +72,7 @@
       </div>
     </div>
     <div class='about'>
-      <button class='about_button' :class='{about_button__colored: !showAboutInfo}'
+      <button class='about_button info-button' :class='{about_button__colored: !showAboutInfo}'
               @click='handleAboutClick'>
         <span>About this app</span>
 
