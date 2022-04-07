@@ -3,7 +3,8 @@
 
     <h2> Get your beer advice! </h2>
     <div class='content'>
-      <p>Click the button below to get your recommended beer. And... don't forget to try it! </p>
+      <p class='randomizer-p'>Click the button below to get your recommended beer.  </p>
+      <p class='randomizer-p'> And... don't forget to try it! </p>
       <div class='beer-block'>
         <div class='beer-block__item beer-pic' v-bind:style="{ background: color}">
           <div v-if='!showBeerInfo'>
