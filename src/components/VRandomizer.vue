@@ -71,21 +71,22 @@
           <span> Get new recommendation</span>
         </button>
       </div>
-    </div>
-    <div class='about'>
-      <button class='about_button info-button' :class='{about_button__colored: !showAboutInfo}'
-              @click='handleAboutClick'>
-        <span>About this app</span>
+      <div class='about'>
+        <button class='about_button info-button' :class='{about_button__colored: !showAboutInfo}'
+                @click='handleAboutClick'>
+          <span>About this app</span>
 
-        <div class='about_info' v-if='showAboutInfo'>
-          <p> You want to try some new sort/brand of beer but suffering over choosing one?
-            Let this app decide for you!</p>
-          <p> Based on info in your profile (after a thorough long analysis) this app will offer the best options. Try new sorts/brand of beer with us. Enjoy!</p>
-          <br>
-          <p> Hint: you can view your profile by clicking the profile icon.</p>
-        </div>
-      </button>
+          <div class='about_info' v-if='showAboutInfo'>
+            <p> You want to try some new sort/brand of beer but suffering over choosing one?
+              Let this app decide for you!</p>
+            <p> Based on info in your profile (after a thorough long analysis) this app will offer the best options. Try new sorts/brand of beer with us. Enjoy!</p>
+            <br>
+            <p> Hint: you can view your profile by clicking the profile icon.</p>
+          </div>
+        </button>
+      </div>
     </div>
+
   </div>
 
 </template>
